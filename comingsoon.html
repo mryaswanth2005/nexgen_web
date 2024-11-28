@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        /* Reset and body styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        /* Container styling */
+        .coming-soon-container {
+            text-align: center;
+        }
+        /* Logo styling */
+        .logo img {
+            max-width: 150px;
+            width: 100%;
+            height: auto;
+        }
+        /* "Coming Soon" text with blink animation */
+        .coming-soon-text {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: blink 1s infinite;
+        }
+        /* Keyframes for blinking animation */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="coming-soon-container">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="assets/images/logocr.png" alt="Company Logo">
+    </div>
+    <!-- Blinking "Coming Soon" text -->
+    <div class="coming-soon-text">Coming Soon</div>
+</div>
+
+</body>
+</html>

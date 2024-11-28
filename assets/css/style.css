@@ -1,0 +1,203 @@
+/*
+Template Name: Opixo - Tailwind CSS Multipurpose Landing Page Template
+Version: 1.0
+Author: coderthemes
+Email: support@coderthemes.com
+File: style.scss
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*
+Template Name: Opixo - Tailwind CSS Multipurpose Landing Page Template
+Version: 1.0
+Author: coderthemes
+Email: support@coderthemes.com
+File: _reboot.scss
+*/
+
+html {
+    @apply relative scroll-smooth;
+}
+
+body {
+    @apply font-nunito overflow-x-hidden text-gray-500;
+    font-size: 15px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+p {
+    @apply font-maven;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-semibold font-nunito;
+}
+
+/*
+Template Name: Opixo - Tailwind CSS Multipurpose Landing Page Template
+Version: 1.0
+Author: coderthemes
+Email: support@coderthemes.com
+File: _navbar.scss
+*/
+
+.navbar {
+    @apply font-nunito block fixed top-0 inset-x-0 z-40 w-full lg: bg-transparent bg-white border-b lg:border-none border-gray-200 transition-all duration-500 shadow-xl lg:shadow-none;
+}
+
+.navbar nav {
+    @apply flex flex-wrap lg: flex-nowrap items-center justify-between py-4 transition-all duration-500;
+}
+
+.navbar nav .logo {
+    @apply inline-block whitespace-nowrap;
+}
+
+.navbar nav .navbar-nav {
+    @apply inline-flex flex-col lg: flex-row gap-x-4 lg:items-center justify-center mt-4 lg:mt-0;
+}
+
+.navbar nav .navbar-nav .nav-item .nav-link {
+    @apply inline-block relative tracking-wide py-1 px-3.5 rounded-md text-base capitalize font-semibold cursor-pointer transition-all duration-300 bg-transparent;
+}
+
+.navbar nav .navbar-nav .nav-item .nav-link:active,
+.navbar nav .navbar-nav .nav-item .nav-link:focus,
+.navbar nav .navbar-nav .nav-item .nav-link:hover {
+    @apply text-primary bg-gray-400/10;
+}
+
+.navbar nav .navbar-nav .active .nav-link {
+    @apply text-primary bg-gray-400/10;
+}
+
+.navbar nav .nav-btn {
+    @apply py-2 px-4 rounded-lg inline-flex items-center justify-center text-base font-medium transition-all;
+}
+
+.navbar.nav-light .logo .logo-light {
+    @apply hidden lg: block;
+}
+
+.navbar.nav-light .logo .logo-dark {
+    @apply block lg: hidden;
+}
+
+.navbar.nav-light .navbar-nav .nav-item .nav-link {
+    @apply lg: text-white text-gray-600;
+}
+
+.navbar.nav-light .navbar-nav .nav-item.active .nav-link {
+    @apply text-primary lg: bg-white/10 bg-gray-400/10;
+}
+
+.navbar.nav-light .nav-btn {
+    @apply bg-primary text-white lg: bg-white lg:text-primary;
+}
+
+.navbar.nav-dark nav .logo .logo-light {
+    @apply hidden;
+}
+
+.navbar.nav-dark nav .logo .logo-dark {
+    @apply block;
+}
+
+.navbar.nav-dark .navbar-nav .nav-item .nav-link {
+    @apply text-gray-800;
+}
+
+.navbar.nav-dark .navbar-nav .nav-item.active .nav-link {
+    @apply text-primary bg-gray-400/10;
+}
+
+.navbar.nav-dark .nav-btn {
+    @apply bg-primary text-white;
+}
+
+.navbar.nav-sticky {
+    @apply bg-white border-b border-gray-200 transition-all duration-500 shadow-xl;
+}
+
+.navbar.nav-sticky nav .logo .logo-light {
+    @apply hidden;
+}
+
+.navbar.nav-sticky nav .logo .logo-dark {
+    @apply block;
+}
+
+.navbar.nav-sticky.nav-light .navbar-nav .nav-item .nav-link {
+    @apply text-gray-800;
+}
+
+.navbar.nav-sticky.nav-light .navbar-nav .nav-item .nav-link:active,
+.navbar.nav-sticky.nav-light .navbar-nav .nav-item .nav-link:focus,
+.navbar.nav-sticky.nav-light .navbar-nav .nav-item .nav-link:hover {
+    @apply text-primary bg-gray-400/10;
+}
+
+.navbar.nav-sticky.nav-light .navbar-nav .nav-item.active .nav-link {
+    @apply text-primary bg-slate-400/10;
+}
+
+.navbar.nav-sticky.nav-light .nav-btn {
+    @apply bg-primary text-white;
+}
+
+/*
+Template Name: Opixo - Tailwind CSS Multipurpose Landing Page Template
+Version: 1.0
+Author: coderthemes
+Email: support@coderthemes.com
+File: _swiper.scss
+*/
+
+.swiper-slide {
+    height: 100%;
+    width: 100%;
+}
+
+.swiper-1 {
+    height: 450px;
+    width: auto;
+}
+
+.swiper-pagination-bullets-dynamic {
+    @apply py-1;
+}
+
+.feedback-swiper .swiper-pagination .swiper-pagination-bullet {
+    @apply h-1.5 w-4 bg-neutral-500 rounded-sm;
+}
+
+.feedback-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply ring-2 ring-offset-2 bg-primary ring-primary;
+}
+
+#testimonial_directory .swiper-slide {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+#testimonial_directory .swiper-slide.swiper-slide-active {
+    @apply w-auto h-[60%] transition-all duration-700;
+    box-shadow: 0 7px 14px 0 rgba(52, 58, 64, 0.06);
+}
+
+.auth-swiper .swiper-pagination .swiper-pagination-bullet {
+    @apply h-1.5 w-4 bg-white opacity-50 rounded-sm;
+}
+
+.auth-swiper .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @apply ring-2 ring-offset-2 ring-offset-black bg-primary ring-primary;
+}
