@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="UI Fresh -  uifresh.net">
-    <link rel="icon" href="assets\images\logocr.png" sizes="32x32">
-    <title>NeXgen softwares</title>
+    <meta name="author" content="UI Fresh - uifresh.net">
+    <link rel="icon" href="assets/images/logocr.png" sizes="32x32">
+    <title>NeXgen Softwares</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
@@ -17,23 +17,23 @@
             <div class="row justify-content-center bg-white rounded-4 shadow py-5 gx-5 px-lg-5">
                 <div class="col-md-6 text-center">
                     <h2 class="uf-ct-01-text-primary text-uppercase fw-bold">Contact Us</h2>
-                    <p>Or reach out manually to <a href="nexgensoftwarestechnology@gmail.com" class="text-decoration-none">nexgensoftwarestechnology@gmail.com</a></p>
+                    <p>Or reach out manually to <a href="mailto:nexgensoftwarestechnology@gmail.com" class="text-decoration-none">nexgensoftwarestechnology@gmail.com</a></p>
                     <img src="./images/plane.png" alt="" class="uf-img-contact-form-01 pt-4 d-md-block d-none">
                 </div>
                 <div class="col-md-6">
-                    <form>
+                    <form id="contactForm">
                         <div class="mb-3">
                             <label for="uf-imail" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="uf-imail" aria-describedby="emailHelp">
+                            <input type="email" class="form-control" id="uf-imail" required>
                             <div id="emailHelp" class="form-text uf-ct-01-text-primary">We'll never share your email with anyone else.</div>
                         </div>
                         <div class="mb-3">
                             <label for="uf-iname" class="form-label">Your name</label>
-                            <input type="text" class="form-control" id="uf-iname">
+                            <input type="text" class="form-control" id="uf-iname" required>
                         </div>
                         <div class="mb-3">
                             <label for="uf-itextarea" class="form-label">Your message</label>
-                            <textarea class="form-control" id="uf-itextarea" rows="3"></textarea>
+                            <textarea class="form-control" id="uf-itextarea" rows="3" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-lg uf-ct-01-btn-primary">Send Message</button>
                     </form>
@@ -41,6 +41,43 @@
             </div>
         </div>
     </section>
+
+    <script>
+        const botToken = '7709862406:AAEwZpSvgPrqdJazI3cif--AlNNTtZyAGpw'; // Your Telegram Bot Token
+        const chatId = '5095137619'; // Your Chat ID
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from reloading the page
+
+            const email = document.getElementById('uf-imail').value;
+            const name = document.getElementById('uf-iname').value;
+            const message = document.getElementById('uf-itextarea').value;
+
+            const messageText = `You have a new contact message:\n\nEmail: ${email}\nName: ${name}\nMessage: ${message}`;
+
+            // Send the message to Telegram
+            sendMessageToTelegram(messageText);
+        });
+
+        function sendMessageToTelegram(messageText) {
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(messageText)}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Your message has been sent successfully!');
+                    } else {
+                        alert('Failed to send the message. Please try again later.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error sending message:', error);
+                    alert('An error occurred. Please try again later.');
+                });
+        }
+    </script>
+
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
 </body>
 
